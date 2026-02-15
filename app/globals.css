@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    background-color: #212F3D;
+    color: white;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: float 7s infinite alternate;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+
+/* 1. HAPUS atau GANTI bagian html lama dengan ini */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+  /* WAJIB: Biar gak tabrakan sama Lenis */
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* 2. Pastikan body tidak punya overflow-x: hidden yang aneh */
+body {
+  background-color: #FFFEEC;
+  color: black;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Mencegah konten meluber ke samping */
+}
+
+/* 3. Tambahan untuk animasi blob agar tidak mengganggu tata letak */
+.animate-blob {
+  animation: float 7s infinite alternate;
+  will-change: transform;
+  /* Optimalisasi performa */
+}
