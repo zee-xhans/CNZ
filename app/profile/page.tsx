@@ -7,7 +7,7 @@ import Footer from "../_components/Footer";
 import { motion } from "framer-motion";
 
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0 }, 
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.12, delayChildren: 0.2 },

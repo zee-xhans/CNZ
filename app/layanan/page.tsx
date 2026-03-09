@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../_components/Navbar";
 import Footer from "../_components/Footer";
+import RateCard from "../_components/RateCard";
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -134,6 +135,9 @@ export default function LayananPage() {
             </div>
           </div>
         </section>
+
+        {/* Rate Card / Card Harga */}
+        <RateCard />
 
         {/* Proses Kerja (opsional) */}
         <section className="relative py-16 md:py-24">
